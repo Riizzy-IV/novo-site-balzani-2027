@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'Swarsh Daisy';
+  src: url('/fonts/Swarsh Daisy/Swarsh Daisy-Italic.woff2') format('woff2'),
+    url('/fonts/Swarsh Daisy/Swarsh Daisy-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Brand — tokens do Figma */
+  --primary: #ff611b;
+  --primary-light: #ffaa87;
+  --primary-dark: #b83800;
+  --primary-deep: #db4300;
+  --primary-soft: #ee5e1f;
+  --secondary: #003556;
+  --secondary-dark: #00243a;
+  --secondary-darker: #021c25;
+  --secondary-deep: #021c2d;
+  --secondary-light: #2f79a8;
+  --secondary-lighter: #afd2df;
+  --off-white: #ededed;
+  --white: #ffffff;
+
+  --font-display: 'Red Hat Display', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+  --font-script: 'Swarsh Daisy', 'Playfair Display', Georgia, serif;
+  /* Proxima Nova Extra Wide é fonte paga — Archivo Expanded é o substituto */
+  --font-wide: 'Proxima Nova Extra Wide', 'Archivo', var(--font-display);
+
+  /*
+   * Unidade fluida: 1u = 1px no frame de 1920px do Figma.
+   * Escala proporcionalmente abaixo de 1920 e trava em 1px acima.
+   */
+  --u: min(1px, calc(100vw / 1920));
+  --gutter: calc(var(--u) * 120);
+  --container: calc(var(--u) * 1680);
+
+  /* Tamanhos de fonte do Figma com piso de legibilidade */
+  --fs-16: max(13px, calc(var(--u) * 16));
+  --fs-18: max(14px, calc(var(--u) * 18));
+  --fs-20: max(15px, calc(var(--u) * 20));
+  --fs-24: max(16px, calc(var(--u) * 24));
+  --fs-28: max(19px, calc(var(--u) * 28));
+  --fs-32: max(18px, calc(var(--u) * 32));
+  --fs-40: max(24px, calc(var(--u) * 40));
+  --fs-56: max(30px, calc(var(--u) * 56));
+  --fs-64: max(32px, calc(var(--u) * 64));
+  --fs-80: max(38px, calc(var(--u) * 80));
+  --fs-90: max(48px, calc(var(--u) * 90));
+  --fs-120: max(52px, calc(var(--u) * 120));
+  --fs-160: max(72px, calc(var(--u) * 160));
+  --fs-200: max(64px, calc(var(--u) * 200));
+}
+
+@media (max-width: 900px) {
+  :root {
+    --u: calc(100vw / 900);
+    --gutter: 20px;
+    --container: calc(100vw - 40px);
+  }
+}
