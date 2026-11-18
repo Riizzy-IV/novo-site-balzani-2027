@@ -69,6 +69,9 @@ export const DIFFERENTIALS = [
 export const ECOSYSTEM = [
   {
     name: 'Balzani',
+    // é o próprio site: o link rola até "Quem somos" em vez de abrir outra aba
+    url: '#quem-somos',
+    internal: true,
     logo: { src: img('eco-balzani.svg'), w: 314, h: 61 },
     gap: 43,
     textWidth: 269,

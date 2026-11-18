@@ -24,9 +24,11 @@ export default function Ecosystem() {
         {ECOSYSTEM.map((e) => {
           // Cards com site externo viram link e ganham o estado hover laranja do Figma
           const Tag = e.url ? 'a' : 'article'
-          const linkProps = e.url
-            ? { href: e.url, target: '_blank', rel: 'noreferrer', 'aria-label': `Acesse o site da ${e.name}` }
-            : {}
+          const linkProps = !e.url
+            ? {}
+            : e.internal
+              ? { href: e.url, 'aria-label': `Conheça a ${e.name}` }
+              : { href: e.url, target: '_blank', rel: 'noreferrer', 'aria-label': `Acesse o site da ${e.name}` }
           return (
             <Tag key={e.name} className={`eco-card ${e.url ? 'eco-card--link' : ''}`} data-reveal {...linkProps}>
               <div className="eco-card__content" style={{ gap: `calc(var(--u) * ${e.gap})` }}>
